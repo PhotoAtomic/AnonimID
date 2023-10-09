@@ -1,4 +1,4 @@
-using AnonimID.Server.Components;
+using AnonimId.Server.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
