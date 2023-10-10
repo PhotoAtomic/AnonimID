@@ -1,3 +1,4 @@
+using AnonimId.Client;
 using AnonimId.Server.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +28,7 @@ app.UseStaticFiles();
 
 app.MapRazorComponents<App>()
     .AddServerRenderMode()
-    .AddWebAssemblyRenderMode();
+    .AddWebAssemblyRenderMode()
+    .AddAdditionalAssemblies(typeof(IClientAssemblyMarker).Assembly);
 
 app.Run();
