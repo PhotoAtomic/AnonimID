@@ -1,6 +1,9 @@
 
+using AnonimId.Core.Client;
+using AnonimId.Core.Server;
 using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Containers;
+using NSubstitute;
 
 namespace AnonimId.Core.Test
 {
@@ -13,20 +16,8 @@ namespace AnonimId.Core.Test
             _surrealDBContainer = surrealDBContainer;
         }
 
-        [Fact]
-        public void Test1()
-        {
-            int i = 0;
-        }
-        [Fact]
-        public void Test2()
-        {
-            int i = 0;
-        }
-        [Fact]
-        public void Test3()
-        {
-            int i = 0;
-        }
+
+       
+      
     }
 }

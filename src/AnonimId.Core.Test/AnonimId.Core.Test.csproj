@@ -24,4 +24,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AnonimId.Core.Client\AnonimId.Core.Client.csproj" />
+    <ProjectReference Include="..\AnonimId.Core.Server\AnonimId.Core.Server.csproj" />
+    <ProjectReference Include="..\AnonimId.Core\AnonimId.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="srp" Version="1.0.7" />
     <PackageReference Include="SurrealDb.Net" Version="0.1.3" />
   </ItemGroup>
 
