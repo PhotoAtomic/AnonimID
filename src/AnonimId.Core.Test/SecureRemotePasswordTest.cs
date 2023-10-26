@@ -12,20 +12,22 @@ namespace AnonimId.Core.Test
 {
     public class SecureRemotePasswordTest
     {
+        
+
         [Fact]
         public async Task SignUpAndSignIn()
         {
             var store = Substitute.For<IUserStore>();
-
             UserSaltAndVerifier storage = new(string.Empty, string.Empty, string.Empty);
+
             store.Register(Arg.Any<UserSaltAndVerifier>()).Returns(info =>
             {
                 storage = info.Arg<UserSaltAndVerifier>();
                 return true;
             });
-            store.GetSaltAndVerifier(Arg.Any<string>()).Returns(storage);
+            store.GetSaltAndVerifier(Arg.Any<string>()).Returns(info=>storage);
 
-            LoginServer loginServer = new LoginServer(store);
+            LoginVerifier loginServer = new LoginVerifier(store);
             Login login = new Login("usr1", "passwd1", loginServer);
 
 

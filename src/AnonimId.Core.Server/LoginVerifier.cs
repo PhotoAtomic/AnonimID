@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AnonimId.Core.Server
 {
-    public class LoginServer(IUserStore userStore) : IAccountServer
+    public class LoginVerifier(IUserStore userStore) : IAccountServer
     {
 
         public string ServerEphemeral => serverEphemeral?.Public ?? String.Empty;
@@ -15,7 +15,7 @@ namespace AnonimId.Core.Server
         private string? clientEphemeralPublic;
         private string? username;
         private SaltAndVerifier? saltAndVerifier;
-        private SrpServer server = new SrpServer();
+        private readonly static SrpServer server = new SrpServer();
 
         public async Task<SaltAndServerEphemeral> Present(string username, string clientEphemeralPublic)
         {

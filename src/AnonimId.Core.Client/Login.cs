@@ -12,20 +12,9 @@ namespace AnonimId.Core.Client
 
 
 
-    public class Login
+    public class Login(string username, string password, IAccountServer channel)
     {
-        private readonly string username;
-        private readonly string password;
-        private readonly IAccountServer channel;
-        private readonly SrpClient client;
-
-        public Login(string username, string password, IAccountServer channel)
-        {
-            this.username = username;
-            this.password = password;
-            this.channel = channel;
-            client = new SrpClient();
-        }
+        private readonly static SrpClient client = new SrpClient();
 
         public async Task<IResult> SignUp()
         {
